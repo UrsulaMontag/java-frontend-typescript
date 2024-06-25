@@ -16,3 +16,20 @@ score ? console.log("Score is considered truthy.") : console.log("Score is consi
 isAdmin ? console.log("isAdmin is evaluated as truthy.") : console.log("isAdmin is evaluated as falsy.");
 
 !isAdmin && console.log("isAdmin is false.");
+
+//Bonus
+let n: number = 5;
+if (n === 5) {
+    console.log("     *     ");
+    console.log("    ***    ");
+    console.log("   *****   ");
+    console.log("  *******  ");
+    console.log(" ********* ");
+    console.log("     *     ");
+    console.log("     *     ");
+    console.log("     *     ");
+    console.log("     *     ");
+    console.log("     *     ");
+} else {
+    console.log("It's not christmas time!")
+}
