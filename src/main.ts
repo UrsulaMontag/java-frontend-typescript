@@ -1,3 +1,4 @@
+//Challenges 25.06.24
 const age: number = 42;
 let score: number = 0;
 let username: string = "";
@@ -33,3 +34,21 @@ if (n === 5) {
 } else {
     console.log("It's not christmas time!")
 }
+
+//Challenges 26.06.24
+const numbers: number[] = [1, 2, 3, 4, 5, 6, 7];
+const doubledNumbers: number[] = numbers.map((num: number) => num * 2);
+console.log(`DoubledNumbers: ${doubledNumbers}`);
+
+const words: string[] = ["Hello", "World", "tomorrow", "afternoon", "cat", "goose", "typescript"];
+const longWords: string[] = words.filter(word => word.length > 5);
+console.log(`Words with more than 5 letters: ${longWords}`);
+
+const reducedNumber: number = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(`reducedNumber: ${reducedNumber}`);
+
+numbers.push(12, 14, 16);
+const isANumberGreaterThanTen: boolean = numbers.some(num => num > 10);
+console.log(`Is at least one number greater than ten: ${isANumberGreaterThanTen}`);
+
+//Bonus
