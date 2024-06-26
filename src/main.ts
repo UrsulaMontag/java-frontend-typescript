@@ -65,7 +65,39 @@ console.log(`Remove highest four and lowest two: ${removeHihgestFourAndLowestTwo
 const removeAllDivisibleByFour: number[] = removeHihgestFourAndLowestTwo.filter(number => number % 4 !== 0);
 console.log(`Removed divisible by Four: ${removeAllDivisibleByFour}`);
 
-const result: number = removeAllDivisibleByFour.reduce((accumulator, currentValue) => accumulator + currentValue, removeAllDivisibleByFour[0]);
+const result: number = removeAllDivisibleByFour.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 console.log(`Result: ${result}`);
 
+//Types
+type Grade = 1 | 2 | 3 | 4 | 5 | 6 | "A" | "B" | "C" | "D" | "E" | "F";
+type Student = {
+    firstName: string,
+    lastName: string,
+    age: number,
+    grades: (Grade | undefined)[]
+};
+const student1: Student = {firstName: "Max", lastName: "Mustermann", age: 23, grades: [1, 5, 3]};
+const student2: Student = {firstName: "Marlene", lastName: "Müller", age: 21, grades: ["A", "D", "B", undefined]};
+const student3: Student = {
+    firstName: "Lonzel",
+    lastName: "Holloway-Schlotterbeck",
+    age: 33,
+    grades: [undefined, 1, undefined, 1, 1, undefined]
+};
+console.log(student1);
 
+const printStudent = (student: Student) => {
+    const studentGrades = student.grades.map(grade => grade ?? "*");
+    const numberOfChars = student.firstName.length + student.lastName.length + student.age.toString().length + 4; // 4 is for the empty strings between words and the two ()
+    let highlightNames: string = "";
+    for (let i = 0; i < numberOfChars; i++) {
+        highlightNames += "=";
+    }
+    console.log(`${student.firstName} ${student.lastName} (${student.age})`);
+    console.log(highlightNames);
+    console.log(`Grades: ${studentGrades.join(', ')}`);
+}
+printStudent(student2);
+
+const students: Student[] = [student1, student2, student3];
+students.map(student => printStudent(student));
