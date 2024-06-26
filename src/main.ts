@@ -89,12 +89,9 @@ console.log(student1);
 const printStudent = (student: Student) => {
     const studentGrades = student.grades.map(grade => grade ?? "*");
     const numberOfChars = student.firstName.length + student.lastName.length + student.age.toString().length + 4; // 4 is for the empty strings between words and the two ()
-    let highlightNames: string = "";
-    for (let i = 0; i < numberOfChars; i++) {
-        highlightNames += "=";
-    }
+
     console.log(`${student.firstName} ${student.lastName} (${student.age})`);
-    console.log(highlightNames);
+    console.log("=".repeat(numberOfChars));
     console.log(`Grades: ${studentGrades.join(', ')}`);
 }
 printStudent(student2);
