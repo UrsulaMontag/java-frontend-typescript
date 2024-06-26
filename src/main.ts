@@ -62,7 +62,7 @@ console.log(`Squared numbers: ${squaredNumbers}`);
 const removeHihgestFourAndLowestTwo: number[] = squaredNumbers.slice(4, squaredNumbers.length - 2);
 console.log(`Remove highest four and lowest two: ${removeHihgestFourAndLowestTwo}`);
 
-const removeAllDivisibleByFour: number[] = squaredNumbers.filter(number => number % 4 !== 0);
+const removeAllDivisibleByFour: number[] = removeHihgestFourAndLowestTwo.filter(number => number % 4 !== 0);
 console.log(`Removed divisible by Four: ${removeAllDivisibleByFour}`);
 
 const result: number = removeAllDivisibleByFour.reduce((accumulator, currentValue) => accumulator + currentValue, removeAllDivisibleByFour[0]);
