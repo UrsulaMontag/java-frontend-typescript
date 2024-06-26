@@ -52,3 +52,20 @@ const isANumberGreaterThanTen: boolean = numbers.some(num => num > 10);
 console.log(`Is at least one number greater than ten: ${isANumberGreaterThanTen}`);
 
 //Bonus
+const list = [15, 6, 3213, 9, 0, 12, 8464, 1, 1264, 481, 186, 1031, 194];
+const sortedList: number[] = list.sort((a, b) => b - a);
+console.log(`Sorted in descending order: ${sortedList}`);
+
+const squaredNumbers: number[] = sortedList.map((num: number) => num * num);
+console.log(`Squared numbers: ${squaredNumbers}`);
+
+const removeHihgestFourAndLowestTwo: number[] = squaredNumbers.slice(4, squaredNumbers.length - 2);
+console.log(`Remove highest four and lowest two: ${removeHihgestFourAndLowestTwo}`);
+
+const removeAllDivisibleByFour: number[] = squaredNumbers.filter(number => number % 4 !== 0);
+console.log(`Removed divisible by Four: ${removeAllDivisibleByFour}`);
+
+const result: number = removeAllDivisibleByFour.reduce((accumulator, currentValue) => accumulator + currentValue, removeAllDivisibleByFour[0]);
+console.log(`Result: ${result}`);
+
+
